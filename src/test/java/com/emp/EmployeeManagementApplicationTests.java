@@ -1,5 +1,6 @@
 package com.emp;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
@@ -74,16 +75,13 @@ class EmployeeManagementApplicationTests {
 
 	@Test
 	void getByEmail() {
-		Optional<Employee> byEmail = employeeRepository.findByEmail("rakesh@gmail.com");
-		if (byEmail.isPresent()) {
-			Employee email = byEmail.get();
-			System.out.println(email.getId());
-			System.out.println(email.getName());
-			System.out.println(email.getEmail());
-			System.out.println(email.getMobile());
-			System.out.println(email.getDepartment());
-			System.out.println(email.getSalary());
-		}
+		Employee r = employeeRepository.findByEmail("rakesh@gmail.com");
+		System.out.println(r.getId());
+		System.out.println(r.getName());
+		System.out.println(r.getEmail());
+		System.out.println(r.getMobile());
+		System.out.println(r.getDepartment());
+		System.out.println(r.getSalary());
 	}
 
 	@Test
@@ -115,7 +113,7 @@ class EmployeeManagementApplicationTests {
 
 	@Test
 	void getByEmailOrMobile() {
-		Iterable<Employee> byEmailOrMobile = employeeRepository.findByEmailOrMobile("rakesh@gmail.com", "6366432873");
+		List<Employee> byEmailOrMobile = employeeRepository.findByEmailOrMobile("rakesh@gmail.com", "6366432873");
 		for (Employee e : byEmailOrMobile) {
 			System.out.println(e.getId());
 			System.out.println(e.getName());
