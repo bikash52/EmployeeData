@@ -42,5 +42,5 @@ A simple Spring Boot + Hibernate + MySQL project to manage employee records with
 
 ---
 
-## 🧠 Project Structure
+
 
